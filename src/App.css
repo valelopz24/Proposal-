@@ -1,0 +1,88 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.container-valentine {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the screen */
+  background: linear-gradient(120deg, #f794a4 0%, #f9d1b7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scroll, allow vertical */
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.valentine-question {
+  font-family: 'Pacifico', cursive;
+  color: #d63384; /* Bootstrap danger color */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Add gap between buttons */
+  margin-top: 2rem;
+}
+
+.yes-button {
+  transition: transform 0.2s ease;
+}
+
+.yes-button:hover {
+    transform: scale(1.05); /* Make hover effect more subtle */
+}
+
+.no-button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+  }
+  .display-4 {
+    font-size: 2.5rem; /* Smaller title on mobile */
+  }
+  .buttons-container {
+    flex-direction: column; /* Stack buttons on mobile */
+  }
+  .yes-button {
+    margin-right: 0;
+    margin-bottom: 15px; /* Add space below yes button */
+  }
+}
+
+/* Fade in effect for the final message */
+.fade-in {
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

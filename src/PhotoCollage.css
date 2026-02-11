@@ -1,0 +1,95 @@
+.collage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.collage-heart-shape {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* Base size for the collage */
+  height: 0;
+  padding-bottom: 85%; /* Aspect ratio for the heart shape */
+  margin-bottom: 1rem;
+}
+
+.photo-wrapper {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5) rotate(0deg);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: white;
+  padding: 5px; /* Slightly smaller padding */
+}
+
+.photo-wrapper.visible {
+  opacity: 1;
+  transform: scale(1) rotate(var(--rotation, 0deg));
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* 
+  Responsive Heart shape layout for 13 photos.
+  Using percentages for all sizes and positions.
+*/
+.photo-1 { width: 22%; height: 25%; top: 15%; left: 25%; --rotation: -25deg; z-index: 3; }
+.photo-2 { width: 25%; height: 28%; top: 5%; left: 37%; --rotation: 0deg; z-index: 2; }
+.photo-3 { width: 22%; height: 25%; top: 15%; right: 25%; --rotation: 25deg; z-index: 3; }
+.photo-4 { width: 22%; height: 25%; top: 30%; left: 8%; --rotation: -35deg; z-index: 4; }
+.photo-5 { width: 22%; height: 25%; top: 30%; right: 8%; --rotation: 35deg; z-index: 4; }
+.photo-6 { width: 24%; height: 27%; top: 48%; left: 18%; --rotation: -15deg; z-index: 5; }
+.photo-7 { width: 24%; height: 27%; top: 48%; right: 18%; --rotation: 15deg; z-index: 5; }
+.photo-8 { width: 28%; height: 32%; top: 32%; left: 36%; --rotation: 5deg; z-index: 1; }
+.photo-9 { width: 22%; height: 25%; bottom: 12%; left: 30%; --rotation: -10deg; z-index: 6; }
+.photo-10 { width: 22%; height: 25%; bottom: 12%; right: 30%; --rotation: 10deg; z-index: 6; }
+.photo-11 { width: 23%; height: 26%; bottom: 0%; left: 38%; --rotation: 0deg; z-index: 7; }
+.photo-12 { width: 20%; height: 23%; top: 2%; left: 12%; --rotation: -45deg; z-index: 2; }
+.photo-13 { width: 20%; height: 23%; top: 2%; right: 12%; --rotation: 45deg; z-index: 2; }
+
+
+.dedication-text {
+  text-align: center;
+  max-width: 90%;
+  position: relative;
+  z-index: 10;
+}
+
+.spotify-button {
+  background-color: #fff0f1; /* Pale pink */
+  color: #902d41; /* Deep cherry red */
+  border: 1px solid #902d41;
+  padding: 12px 25px;
+  border-radius: 50px; /* Fully rounded */
+  font-family: 'Pacifico', cursive;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.spotify-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .collage-heart-shape {
+    max-width: 95vw;
+    padding-bottom: 110%; /* Adjust aspect ratio for narrower screens */
+  }
+  .dedication-text {
+    max-width: 100%;
+  }
+}

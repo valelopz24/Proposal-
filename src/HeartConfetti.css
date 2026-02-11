@@ -1,0 +1,63 @@
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti-heart {
+  position: absolute;
+  top: -10%; /* Start off-screen */
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  transform: rotate(-45deg);
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.confetti-heart::before,
+.confetti-heart::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: inherit; /* Inherit color from parent */
+  border-radius: 50%;
+}
+
+.confetti-heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+.confetti-heart::after {
+  top: 0;
+  left: 7.5px;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    transform: rotate(-45deg) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    transform: rotate(-45deg) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Randomize colors */
+.confetti-heart:nth-child(5n) { background-color: #ff79ac; }
+.confetti-heart:nth-child(5n-1) { background-color: #ff4d4d; }
+.confetti-heart:nth-child(5n-2) { background-color: #ffc0cb; }
+.confetti-heart:nth-child(5n-3) { background-color: #f99; }
+.confetti-heart:nth-child(5n-4) { background-color: #e60073; }
+
