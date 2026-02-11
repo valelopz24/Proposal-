@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './PhotoCollage.css';
 
 const images = [
-  '/v1.JPG', '/v2.jpeg', '/v3.jpeg', '/v4.jpeg', '/v5.jpeg', 
-  '/v6.jpeg', '/v7.jpg', '/v8.jpeg', '/v9.jpeg', '/v10.jpeg', 
-  '/v11.jpeg', '/v12.jpeg', '/v13.jpeg'
+  './v1.JPG', './v2.jpeg', './v3.jpeg', './v4.jpeg', './v5.jpeg', 
+  './v6.jpeg', './v7.jpg', './v8.jpeg', './v9.jpeg', './v10.jpeg', 
+  './v11.jpeg', './v12.jpeg', './v13.jpeg'
 ];
 
 const PhotoCollage = () => {
